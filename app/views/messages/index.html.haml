@@ -1,10 +1,5 @@
 !!!
 %html{:lang => "ja"}
-  %head
-    %meta{:charset => "utf-8"}/
-    %title (ChatSpace)
-    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
-   
   %body
     %div.header
       %div.actionbox グループを作成しました
@@ -14,10 +9,12 @@
       %div.subbox1 
         %p.subbox1__user_name ichi
         %ul.subbox1__user_menu
-          %a{:href =>"/index"}
-            %i.fa.fa-edit
-          %a{:href =>"/index"} 
-            %i.fas.fa-cog
+          %li.list
+            = link_to do
+              = fa_icon 'edit', class: 'icon'
+          %li.list
+            = link_to do
+              = fa_icon 'cog', class: 'icon'
           
       %div.subbox2 
         %p.subbox2__group_name 市川家
@@ -42,5 +39,5 @@
             %input(class="message_box_input__text" placeholder="type a message" type="text" )
           %label.image-label{:for => "message_image"}
             %i.far.fa-images
-            %input#message_image.image-label__input{:type =>"file"}
+            %input#message_image.image-label__input{type: :file}
           %a.message_box__send_button{:href =>"/index"}Send
