@@ -5,12 +5,12 @@
   background-color: $sky_blue;
   width: 100%;
   height: 25px;
-}
+  }
 
 .actionbox{
   color:white; 
   text-align: center;
-}
+  }
 
 .container {
   width: 100%;
@@ -23,99 +23,94 @@
   
   grid-template-columns: 300px 1fr;
   grid-template-rows: 100px 1fr 90px;
-}
+  }
 
 .subbox1 {
   grid-area: subbox1;
   display: flex;
   background-color: $sub_dark;
   padding: 0 20px 0;
-}
 
-.subbox1 {
-&__user_name{
-  font-size: 16px;
-  font-weight: bold;
-  width: 70%;
-  color: #FFFFFF;
-  background-color:$sub_dark;
-  margin: 40px 0 20px;
+    &__user_name{
+    font-size: 16px;
+    font-weight: bold;
+    width: 70%;
+    color: #FFFFFF;
+    background-color:$sub_dark;
+    margin: 40px 0 20px;
+    }
+
+    &__user_menu{
+    display:flex;
+    width: 30%;
+    font-size: 30px;
+    padding: 25px 0 20px 0;
+      .fa-edit{
+        color: $white;
+      }
+      .fa-cog {
+        color: $white;
+      }
+    }
   }
 
-&__user_menu{
-  display:flex;
-  width: 30%;
-  font-size: 30px;
-  padding: 25px 0 20px 0;
-  .fa-edit{
-    color: $white;
-  }
-  .fa-cog {
-    color: $white;
-  }
- }
-}
 .subbox2 {
   grid-area: subbox2;
   background-color: $sub_light;
 
-  .subbox2{
-  &__group_name{
-  font-size: 15px;
-  font-weight: bold;
-  color: $white;
-  padding: 20px 20px 5px;
+    &__group_name{
+    font-size: 15px;
+    font-weight: bold;
+    color: $white;
+    padding: 20px 20px 5px;
+    }
+
+    &__group_oldest_message{
+    font-size: 11px;
+    font-weight: bold;
+    color: $white;
+    padding: 0px 20px 40px;
+    }
   }
 
-  &__group_oldest_message{
-  font-size: 11px;
-  font-weight: bold;
-  color: $white;
-  padding: 0px 20px 40px;
-  }
- }
-}
 .mainbox1 {
   grid-area: mainbox1;
   padding: 0 40px 0;
   border-bottom: solid 2px #eeeeee;
   display: flex;
-  }
-  .mainbox1{
-  &__group_current_name{
+  
+    &__group_current_name{
     font-size: 20px;
     color: #333333;
     margin-top: 35px;
-   }  
+    }  
 
-  &__group_current_members{
-  font-size: 12px;
-  color: #999999;
-  margin-top: 15px;
-   } 
-  }
- 
-.mainbox1__edit_button{
-  height: 40px;
-  padding: 0 20px 0;
-  margin-top: 28px;
-  margin-left: 85%;
-  font-size: 20px;
-  color:$sky_blue;
-  border:solid 2px $sky_blue;
-  line-height: 40px;
-  text-decoration:none;
-}
+    &__group_current_members{
+    font-size: 12px;
+    color: #999999;
+    margin-top: 15px;
+    }
+
+    &__edit_button{
+    height: 40px;
+    padding: 0 20px 0;
+    margin-top: 28px;
+    margin-left: 85%;
+    font-size: 20px;
+    color:$sky_blue;
+    border:solid 2px $sky_blue;
+    line-height: 40px;
+    text-decoration:none;
+    }
+  }  
 
 .mainbox2 {
   grid-area: mainbox2;
   background-color: #fafafa;
   padding: 46px 40px 0;  
-  }
 
-.mainbox2{
-  &__messages{
-  padding-bottom: 40px;
+    &__messages{
+    padding-bottom: 40px;
     }
 
     &_message_baseinfo{
@@ -149,61 +144,62 @@
   padding: 20px 40px 20px;  
   }
   
-  .message{
+.message{
   &_box{
-    display: flex;
-    }
-
-    &_box_input{
-      background-color: white;
-      width: 90%;
-      height: 50px;
-      font-size: 16px;
-      color: #434A54;
-      line-height: 50px;
-    } 
-
-    &_box_input__text{
-      background-color: white;
-      height: 46px;
-      font-size: 16px;
-      color: $main_text;
-      line-height: 50px;
-    }
-    &_box__send_button{
-      background-color: $sky_blue;
-      margin-left: 15px;
-      text-align: center;
-      line-height: 50px;
-      width: 10%;
-      height: 50px; 
-      color:white;
-      font-size: 20px;
-      text-decoration:none;
-      border:solid 2px $sky_blue;
-    }
+  display: flex;
   }
-    input {
-     width: 100%;
-     height: 100%;
-     border-style:solid;
-     border-color:white;
-    }
+  
+  &_box_input{
+  background-color: white;
+  width: 90%;
+  height: 50px;
+  font-size: 16px;
+  color: #434A54;
+  line-height: 50px;
+  } 
+
+  &_box_input__text{
+  background-color: white;
+  height: 46px;
+  font-size: 16px;
+  color: $main_text;
+  line-height: 50px;
+  }
+
+  &_box__send_button{
+  background-color: $sky_blue;
+  margin-left: 15px;
+  text-align: center;
+  line-height: 50px;
+  width: 10%;
+  height: 50px; 
+  color:white;
+  font-size: 20px;
+  text-decoration:none;
+  border:solid 2px $sky_blue;
+  }
+}
+  input {
+  width: 100%;
+  height: 100%;
+  border-style:solid;
+  border-color:white;
+  }
 
   .image-label{
-    width:3%;
-    background-color: $white;
-    padding:10px 0 10px;
+  width:3%;
+  background-color: $white;
+  padding:10px 0 10px;
   }
-    .far.fa-images{
-      position: absolute;
-      font-size:30px;
-      background-color: $white;
-    }
+  
+  .far.fa-images{
+  position: absolute;
+  font-size:30px;
+  background-color: $white;
+  }
 
-    #message_image{
-      position:relative;
-      display:none;
-    }
-
+  #message_image{
+  position:relative;
+  display:none;
+  }
  
