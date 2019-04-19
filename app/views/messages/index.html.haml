@@ -5,14 +5,13 @@
   .container
 
     .subbox1 
-      %p.subbox1__user_name 
-        = current_user.name
+      %p.subbox1__user_name ichi
       %ul.subbox1__user_menu
         %li.list
           = link_to do
             = fa_icon 'edit', class: 'icon'
         %li.list
-          = link_to edit_user_path(current_user) do
+          = link_to do
             = fa_icon 'cog', class: 'icon'
         
     .subbox2
