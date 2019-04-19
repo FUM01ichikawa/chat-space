@@ -1,0 +1,44 @@
+.body
+  .header
+    .actionbox グループを作成しました
+
+  .container
+
+    .subbox1 
+      %p.subbox1__user_name ichi
+      %ul.subbox1__user_menu
+        %li.list
+          = link_to do
+            = fa_icon 'edit', class: 'icon'
+        %li.list
+          = link_to do
+            = fa_icon 'cog', class: 'icon'
+        
+    .subbox2
+      %p.subbox2__group_name 市川家
+      %p.subbox2__group_oldest_message 最初のコメント
+
+    .mainbox1 
+      .mainbox1__group_current
+        %h2.mainbox1__group_current_name 市川
+        %h3.mainbox1__group_current_members Member:ichi
+      
+      %input.mainbox1__edit_button{type: 'submit', value: 'Edit'}
+      
+    .mainbox2
+      .mainbox2__messages
+        .mainbox2_message_baseinfo 
+          %p.mainbox2_message_baseinfo__user ichi
+          %p.mainbox2_message_baseinfo__date 2019/4/14
+        %p.mainbox2_message_text aaaaaaaa
+        
+    .mainbox3
+      .message_box
+        .message_box_input
+          %input(class="message_box_input__text" placeholder="type a message" type="text" )
+
+        %label.image-label{for: :message_image}
+          %i.far.fa-images        
+          %input#message_image.image-label__input{type: :file}
+
+        %input.message_box__send_button{type: 'submit', value: 'Send'}
