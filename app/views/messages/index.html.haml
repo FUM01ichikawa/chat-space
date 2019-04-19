@@ -35,7 +35,9 @@
       .message_box
         .message_box_input
           %input(class="message_box_input__text" placeholder="type a message" type="text" )
+
         %label.image-label{for: :message_image}
-          %i.far.fa-images
+          %i.far.fa-images        
           %input#message_image.image-label__input{type: :file}
+          
         %a.message_box__send_button{:href =>"/index"}Send
