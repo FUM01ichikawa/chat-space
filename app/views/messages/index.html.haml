@@ -22,7 +22,8 @@
       .mainbox1__group_current
         %h2.mainbox1__group_current_name 市川
         %h3.mainbox1__group_current_members Member:ichi
-      %a.mainbox1__edit_button{ href: "/index"} Edit
+      
+      %input.mainbox1__edit_button{type: 'submit', value: 'Edit'}
       
     .mainbox2
       .mainbox2__messages
@@ -39,5 +40,5 @@
         %label.image-label{for: :message_image}
           %i.far.fa-images        
           %input#message_image.image-label__input{type: :file}
-          
-        %a.message_box__send_button{ href: "/index"}Send
+
+        %input.message_box__send_button{type: 'submit', value: 'Send'}
