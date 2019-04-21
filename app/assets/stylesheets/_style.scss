@@ -1,23 +1,6 @@
 
 @charset "UTF-8";
 
-$white:#fff;
-$sub_dark:#253141;
-$sub_light:#2f3e51;
-$main_text:#434A54;
-$sky_blue:#38AEF0;
-
-.header{
-  background-color: $sky_blue;
-  width: 100%;
-  height: 25px;
-  }
-
-.actionbox{
-  color:white; 
-  text-align: center;
-  }
-
 .container {
   width: 100%;
   height: 100vh;
@@ -31,53 +14,6 @@ $sky_blue:#38AEF0;
   grid-template-rows: 100px 1fr 90px;
   }
 
-.subbox1 {
-  grid-area: subbox1;
-  display: flex;
-  background-color: $sub_dark;
-  padding: 0 20px 0;
-
-    &__user_name{
-    font-size: 16px;
-    font-weight: bold;
-    width: 70%;
-    color: #FFFFFF;
-    background-color:$sub_dark;
-    margin: 40px 0 20px;
-    }
-
-    &__user_menu{
-    display:flex;
-    width: 30%;
-    font-size: 30px;
-    padding: 25px 0 20px 0;
-      .fa-edit{
-        color: $white;
-      }
-      .fa-cog {
-        color: $white;
-      }
-    }
-  }
-
-.subbox2 {
-  grid-area: subbox2;
-  background-color: $sub_light;
-
-    &__group_name{
-    font-size: 15px;
-    font-weight: bold;
-    color: $white;
-    padding: 20px 20px 5px;
-    }
-
-    &__group_oldest_message{
-    font-size: 11px;
-    font-weight: bold;
-    color: $white;
-    padding: 0px 20px 40px;
-    }
-  }
 
 .mainbox1 {
   grid-area: mainbox1;
