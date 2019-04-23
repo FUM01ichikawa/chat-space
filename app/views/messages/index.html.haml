@@ -1,4 +1,4 @@
-.wrapper
+.container
   
   = render 'shared/side_bar'
 
@@ -9,17 +9,14 @@
     %input.mainbox1__edit_button{type: 'submit', value: 'Edit'}
       
   .mainbox2
-    .mainbox2__messages
-      .mainbox2_message_baseinfo 
-        %p.mainbox2_message_baseinfo__user ichi
-        %p.mainbox2_message_baseinfo__date 2019/4/14
-        %p.mainbox2_message_text aaaaaaaa
-        
-  .mainbox3
-    .message_box
-      .message_box_input
-        %input(class="message_box_input__text" placeholder="type a message" type="text" )
-      %label.image-label{for: :message_image}
-        %i.far.fa-images        
-        %input#message_image.image-label__input{type: :file}
-      %input.message_box__send_button{type: 'submit', value: 'Send'}
+    = render @messages
+
+  .form  
+    .message_box_input
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'message_box_input__text', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'picture-o-images'
+            = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'form__mask__send_button'
