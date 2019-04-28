@@ -31,6 +31,7 @@
 .subbox2 {
   grid-area: subbox2;
   background-color: $sub_light;
+  overflow:auto;
 
     .group {
       &__name{
