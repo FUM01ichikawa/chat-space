@@ -42,7 +42,7 @@ $(document).on('turbolinks:load', function(){
       $('.mainbox2').append(html);
       scrollBottom()
       $("form")[0].reset();
-       })
+    })
 
     .fail(function(submit_data){
       alert('エラーが発生したためメッセージは送信できませんでした。');
