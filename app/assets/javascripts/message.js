@@ -37,8 +37,8 @@ $(document).on('turbolinks:load', function(){
         contentType: false
     })
 
-    .done(function(submit_data){
-      var html = build_bottommessage_HTML(submit_data);
+    .done(function(input_message){
+      var html = build_bottommessage_HTML(input_message);
       $('.mainbox2').append(html);
       scrollBottom()
       $("form")[0].reset();
