@@ -1,6 +1,6 @@
 
 $(document).on('turbolinks:load', function(){
-  function buildHTML(message) { 
+  function build_bottommessage_HTML(message) { 
     var content = message.content? `${ message.content }` : "";
     var image = message.image? `<img src= ${ message.image }>` : "";
     var html = `<div class="mainbox2__messages" data-id="${message.id}">
@@ -37,18 +37,18 @@ $(document).on('turbolinks:load', function(){
         contentType: false
     })
 
-    .done(function(data){
-      var html = buildHTML(data);
+    .done(function(submit_data){
+      var html = build_bottommessage_HTML(submit_data);
       $('.mainbox2').append(html);
       scrollBottom()
       $('.message_box_input__text').val(''); 
        })
 
-    .fail(function(data){
+    .fail(function(submit_data){
       alert('エラーが発生したためメッセージは送信できませんでした。');
     })
 
-    .always(function(data){
+    .always(function(submit_data){
       $('.form__mask__send_button').prop( 'disabled', false);
     })
 
