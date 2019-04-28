@@ -41,7 +41,7 @@ $(document).on('turbolinks:load', function(){
       var html = build_bottommessage_HTML(submit_data);
       $('.mainbox2').append(html);
       scrollBottom()
-      $('.message_box_input__text').val(''); 
+      $("form")[0].reset();
        })
 
     .fail(function(submit_data){
@@ -52,7 +52,6 @@ $(document).on('turbolinks:load', function(){
       $('.form__mask__send_button').prop( 'disabled', false);
     })
 
-    
     function scrollBottom(){
       var target = $('.mainbox2__messages').last();
       var position = target.offset().top + $('.mainbox2').scrollTop();
