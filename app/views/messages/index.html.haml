@@ -4,10 +4,13 @@
 
   .mainbox1 
     .mainbox1__group_current
-      %h2.mainbox1__group_current_name 市川
-      %h3.mainbox1__group_current_members Member:ichi
-    %input.mainbox1__edit_button{type: 'submit', value: 'Edit'}
-      
+      %h2.mainbox1__group_current_name
+        市川
+      %h3.mainbox1__group_current_members 
+        Member:ichi
+    .mainbox1__edit_button
+      = link_to "Edit", edit_group_path(@group), style: "text-decoration: none;"
+     
   .mainbox2
     = render @messages
 
