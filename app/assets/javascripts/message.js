@@ -62,6 +62,9 @@ $(document).on('turbolinks:load', function(){
     
     var reloadMessages = function() {
       last_message_id = $('.mainbox2__messages:last').data('id');
+      if (last_message_id === undefined) {
+        last_message_id =0 ;
+      }
       group_id = $('.mainbox2').data('group');
       url = '/groups/' + group_id + '/api/messages';
      
@@ -96,5 +99,3 @@ $(document).on('turbolinks:load', function(){
     };
     setInterval(reloadMessages, 5000);
 });
-
-
