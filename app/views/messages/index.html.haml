@@ -11,11 +11,11 @@
     .mainbox1__edit_button
       = link_to "Edit", edit_group_path(@group), style: "text-decoration: none;"
      
-  .mainbox2
+  .mainbox2{data: {group: "#{@group.id}"}}
     = render @messages
 
   .form  
-    .message_box_input 
+    .message_box_input  
       = form_for [@group, @message] do |f| 
         = f.text_field :content, class: 'message_box_input__text' ,placeholder: 'type a message'
         .form__mask

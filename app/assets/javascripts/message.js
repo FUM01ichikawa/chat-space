@@ -1,8 +1,7 @@
-
 $(document).on('turbolinks:load', function(){
   function build_bottommessage_HTML(message) { 
     var content = message.content? `${ message.content }` : "";
-    var image = message.image? `<img src= ${ message.image }>` : "";
+    var image = message.image? `<img src= ${ message.image } alt="">` : "";
     var html = `<div class="mainbox2__messages" data-id="${message.id}">
                   <div class="mainbox2_message_baseinfo">
                     <div class="mainbox2_message_baseinfo__user">
@@ -59,6 +58,44 @@ $(document).on('turbolinks:load', function(){
         scrollTop: position
       }, 300, 'swing')
     }
+    })
+    
+    var reloadMessages = function() {
+      last_message_id = $('.mainbox2__messages:last').data('id');
+      if (last_message_id === undefined) {
+        last_message_id =0 ;
+      }
+      group_id = $('.mainbox2').data('group');
+      url = '/groups/' + group_id + '/api/messages';
+     
+      $.ajax({
+        url: url,
+        type: 'get',
+        dataType: 'json',
+        data: {id: last_message_id}  
+      })
+     
+      .done(function(messages) {
+        var insertHTML = '';
+        $.each(messages, function(index, message){
+          var html = build_bottommessage_HTML(message);
+          insertHTML += html
+          })
+            $('.mainbox2').append(insertHTML);
+            scrollBottom()
+          })
 
-  })
-})
+      .fail(function() {
+        console.log('error');
+      });
+
+      function scrollBottom(){
+        var target = $('.mainbox2__messages').last();
+        var position = target.offset().top + $('.mainbox2').scrollTop();
+        $('.mainbox2').animate({
+          scrollTop: position
+        }, 300, 'swing')
+      }
+    };
+    setInterval(reloadMessages, 5000);
+});
